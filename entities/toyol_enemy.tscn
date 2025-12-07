@@ -1,0 +1,20 @@
+[gd_scene load_steps=5 format=3 uid="uid://cc3lwrajmpld5"]
+
+[ext_resource type="Script" uid="uid://caeifjdu24l1" path="res://scripts/toyol_enemy.gd" id="1_iwvyl"]
+[ext_resource type="Texture2D" uid="uid://cccn7y1547fl0" path="res://icon.svg" id="1_k88e6"]
+[ext_resource type="Resource" uid="uid://c7dbn0hxxc3dg" path="res://resources/toyol_enemy.tres" id="2_sh2l8"]
+
+[sub_resource type="CapsuleShape3D" id="CapsuleShape3D_iwvyl"]
+radius = 0.60839844
+height = 1.2167969
+
+[node name="Toyol_Enemy" type="CharacterBody3D"]
+script = ExtResource("1_iwvyl")
+stats = ExtResource("2_sh2l8")
+
+[node name="Sprite3D" type="Sprite3D" parent="."]
+billboard = 1
+texture = ExtResource("1_k88e6")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+shape = SubResource("CapsuleShape3D_iwvyl")
