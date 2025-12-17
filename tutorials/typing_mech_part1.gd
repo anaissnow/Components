@@ -1,4 +1,4 @@
-extends Node2D
+extends Node2D # Godot version 3.x MIGHT BE OUTDATED A LOT OF TIMES
 
 @onready var enemy_container = $EnemyContainer
 var active_enemy = null
