@@ -11,6 +11,11 @@ config_version=5
 [application]
 
 config/name="Components"
-run/main_scene="uid://x30ixxhmkvvt"
+run/main_scene="uid://knkdex3148md"
 config/features=PackedStringArray("4.5", "Forward Plus")
 config/icon="res://icon.svg"
+
+[global_group]
+
+Player=""
+Enemy=""
