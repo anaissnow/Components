@@ -1,26 +1,35 @@
-[gd_scene load_steps=2 format=3 uid="uid://knkdex3148md"]
+[gd_scene load_steps=3 format=3 uid="uid://knkdex3148md"]
 
 [ext_resource type="Script" uid="uid://ep3j8thq7crb" path="res://scripts/main.gd" id="1_0wfyh"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_o5qli"]
+size = Vector2(49.5, 689)
 
 [node name="Main" type="Node2D"]
 script = ExtResource("1_0wfyh")
 
+[node name="LoseArea" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="LoseArea"]
+position = Vector2(-62, 319)
+shape = SubResource("RectangleShape2D_o5qli")
+
 [node name="SpawnContainer" type="Node2D" parent="."]
 
 [node name="Marker2D" type="Marker2D" parent="SpawnContainer"]
-position = Vector2(1187, 102)
+position = Vector2(1210, 99)
 
 [node name="Marker2D2" type="Marker2D" parent="SpawnContainer"]
-position = Vector2(1184, 220)
+position = Vector2(1207, 217)
 
 [node name="Marker2D3" type="Marker2D" parent="SpawnContainer"]
-position = Vector2(1182, 334)
+position = Vector2(1205, 331)
 
 [node name="Marker2D4" type="Marker2D" parent="SpawnContainer"]
-position = Vector2(1192, 451)
+position = Vector2(1215, 448)
 
 [node name="Marker2D5" type="Marker2D" parent="SpawnContainer"]
-position = Vector2(1187, 583)
+position = Vector2(1210, 580)
 
 [node name="EnemyContainer" type="Node2D" parent="."]
 
@@ -31,5 +40,86 @@ wait_time = 5.0
 wait_time = 10.0
 autostart = true
 
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+
+[node name="GameOverScreen" type="PanelContainer" parent="CanvasLayer"]
+visible = false
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+
+[node name="CenterContainer" type="CenterContainer" parent="CanvasLayer/GameOverScreen"]
+layout_mode = 2
+mouse_filter = 2
+
+[node name="VBoxContainer" type="VBoxContainer" parent="CanvasLayer/GameOverScreen/CenterContainer"]
+layout_mode = 2
+mouse_filter = 2
+theme_override_constants/separation = 50
+
+[node name="GameOverLabel" type="Label" parent="CanvasLayer/GameOverScreen/CenterContainer/VBoxContainer"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 48
+text = "YOU LOST"
+
+[node name="RestartButton" type="Button" parent="CanvasLayer/GameOverScreen/CenterContainer/VBoxContainer"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 36
+text = "RESTART"
+
+[node name="VBoxContainer" type="VBoxContainer" parent="CanvasLayer"]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+
+[node name="CenterTopRow" type="CenterContainer" parent="CanvasLayer/VBoxContainer"]
+layout_mode = 2
+mouse_filter = 2
+
+[node name="TopRow" type="HBoxContainer" parent="CanvasLayer/VBoxContainer/CenterTopRow"]
+layout_mode = 2
+mouse_filter = 2
+
+[node name="EnemiesKilledLabel" type="Label" parent="CanvasLayer/VBoxContainer/CenterTopRow/TopRow"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 28
+text = "Killed:"
+
+[node name="EnemiesKilledValue" type="Label" parent="CanvasLayer/VBoxContainer/CenterTopRow/TopRow"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 28
+text = "0"
+
+[node name="MiddleRow" type="HBoxContainer" parent="CanvasLayer/VBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 3
+mouse_filter = 2
+
+[node name="BottomRow" type="HBoxContainer" parent="CanvasLayer/VBoxContainer"]
+layout_mode = 2
+mouse_filter = 2
+
+[node name="HBoxContainer" type="HBoxContainer" parent="CanvasLayer/VBoxContainer/BottomRow"]
+layout_mode = 2
+mouse_filter = 2
+
+[node name="DifficultyLabel" type="Label" parent="CanvasLayer/VBoxContainer/BottomRow/HBoxContainer"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 28
+text = "    Difficulty:"
+
+[node name="DifficultyValue" type="Label" parent="CanvasLayer/VBoxContainer/BottomRow/HBoxContainer"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 28
+text = "0"
+
+[connection signal="body_entered" from="LoseArea" to="." method="_on_lose_area_body_entered"]
 [connection signal="timeout" from="SpawnTimer" to="." method="_on_spawn_timer_timeout"]
 [connection signal="timeout" from="DifficultyTimer" to="." method="_on_difficulty_timer_timeout"]
+[connection signal="pressed" from="CanvasLayer/GameOverScreen/CenterContainer/VBoxContainer/RestartButton" to="." method="_on_restart_button_pressed"]

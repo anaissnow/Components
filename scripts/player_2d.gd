@@ -1,4 +1,4 @@
-extends Sprite2D
+extends CharacterBody2D
 
 @export var blue = Color.STEEL_BLUE
 @export var green = Color.SEA_GREEN

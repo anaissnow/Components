@@ -1,19 +1,28 @@
-[gd_scene load_steps=3 format=3 uid="uid://wdb8kjx0g6pf"]
+[gd_scene load_steps=4 format=3 uid="uid://wdb8kjx0g6pf"]
 
 [ext_resource type="Texture2D" uid="uid://cccn7y1547fl0" path="res://icon.svg" id="1_si72p"]
 [ext_resource type="Script" uid="uid://qik3gixabqmk" path="res://scripts/player_2d.gd" id="2_cn2fr"]
 
-[node name="player2D" type="Sprite2D"]
-texture = ExtResource("1_si72p")
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_cn2fr"]
+size = Vector2(118, 117)
+
+[node name="player2D" type="CharacterBody2D"]
 script = ExtResource("2_cn2fr")
 
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("1_si72p")
+
 [node name="RichTextLabel" type="RichTextLabel" parent="."]
-offset_left = -80.0
+offset_left = -141.0
 offset_top = -107.0
-offset_right = 80.0
+offset_right = 141.0
 offset_bottom = -67.0
 theme_override_font_sizes/normal_font_size = 24
 bbcode_enabled = true
 text = "Type This"
 horizontal_alignment = 1
 vertical_alignment = 1
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(0, -0.5)
+shape = SubResource("RectangleShape2D_cn2fr")
