@@ -9,7 +9,7 @@ extends Node2D
 @onready var killed_value = $CanvasLayer/VBoxContainer/CenterTopRow/TopRow/EnemiesKilledValue
 @onready var game_over_screen = $CanvasLayer/GameOverScreen
 
-var Enemy = preload("res://entities/player_2d.tscn")
+var Enemy = preload("res://entities/enemy.tscn")
 
 var active_enemy = null
 var current_letter_index : int = -1

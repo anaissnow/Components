@@ -9,7 +9,7 @@ extends Node2D
 @onready var killed_value = $CanvasLayer/VBoxContainer/CenterTopRow/TopRow/EnemiesKilledValue
 @onready var game_over_screen = $CanvasLayer/GameOverScreen
 
-var Enemy = preload("res://entities/player_2d.tscn")
+var Enemy = preload("res://entities/enemy.tscn")
 
 var active_enemy = null
 var current_letter_index : int = -1
@@ -71,7 +71,7 @@ func spawn_enemy():
 	enemy_instance.set_difficulty(difficulty)
 
 func _on_difficulty_timer_timeout() -> void:
-	if difficulty_timer >= 20:
+	if difficulty_timer.time_left >= 20:
 		difficulty_timer.stop()
 		difficulty = 20
 		return
