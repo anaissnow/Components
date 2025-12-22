@@ -4,6 +4,8 @@ extends Node2D
 @onready var spawn_container = $SpawnContainer
 @onready var spawn_timer = $SpawnTimer
 @onready var difficulty_timer = $DifficultyTimer
+@onready var animated_sprite_2d: AnimatedSprite2D = $AnimatedSprite2D
+
 
 @onready var difficulty_value = $CanvasLayer/VBoxContainer/BottomRow/HBoxContainer/DifficultyValue
 @onready var killed_value = $CanvasLayer/VBoxContainer/CenterTopRow/TopRow/EnemiesKilledValue

@@ -1,0 +1,66 @@
+[gd_scene load_steps=7 format=3 uid="uid://behec7lkkq6yx"]
+
+[ext_resource type="Texture2D" uid="uid://boeoxbp1cjn0g" path="res://resources/Retro.png" id="1_mlvnn"]
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_iraov"]
+texture = ExtResource("1_mlvnn")
+region_rect = Rect2(1, 4, 77, 24)
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_er5qu"]
+texture = ExtResource("1_mlvnn")
+region_rect = Rect2(336, 319, 48, 3)
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_or0tx"]
+texture = ExtResource("1_mlvnn")
+region_rect = Rect2(336, 314, 48, 3)
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_qcjqi"]
+texture = ExtResource("1_mlvnn")
+region_rect = Rect2(336, 324, 48, 3)
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_s25gh"]
+texture = ExtResource("1_mlvnn")
+region_rect = Rect2(336, 329, 48, 3)
+
+[node name="PlayerHUD" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="PlayerStatus" type="Panel" parent="."]
+layout_mode = 1
+offset_left = 8.0
+offset_top = 8.0
+offset_right = 387.0
+offset_bottom = 124.0
+theme_override_styles/panel = SubResource("StyleBoxTexture_iraov")
+
+[node name="TextureRect" type="TextureRect" parent="PlayerStatus"]
+layout_mode = 0
+offset_left = 12.0
+offset_top = 12.0
+offset_right = 116.0
+offset_bottom = 104.0
+
+[node name="HP_bar" type="ProgressBar" parent="PlayerStatus"]
+layout_mode = 0
+offset_left = 129.0
+offset_top = 11.0
+offset_right = 373.0
+offset_bottom = 32.0
+theme_override_styles/background = SubResource("StyleBoxTexture_er5qu")
+theme_override_styles/fill = SubResource("StyleBoxTexture_or0tx")
+show_percentage = false
+
+[node name="Energy_bar" type="ProgressBar" parent="PlayerStatus"]
+layout_mode = 0
+offset_left = 129.0
+offset_top = 40.0
+offset_right = 373.0
+offset_bottom = 61.0
+theme_override_styles/background = SubResource("StyleBoxTexture_qcjqi")
+theme_override_styles/fill = SubResource("StyleBoxTexture_s25gh")
+show_percentage = false

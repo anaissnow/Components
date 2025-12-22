@@ -1,7 +1,71 @@
-[gd_scene load_steps=23 format=3 uid="uid://wdb8kjx0g6pf"]
+[gd_scene load_steps=39 format=3 uid="uid://wdb8kjx0g6pf"]
 
 [ext_resource type="Script" uid="uid://qik3gixabqmk" path="res://scripts/enemy.gd" id="1_pqhw6"]
 [ext_resource type="Texture2D" uid="uid://d3jffef6gcvhi" path="res://resources/spritesheets/toyol_spritesheet.png" id="2_pqhw6"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_gdhdb"]
+atlas = ExtResource("2_pqhw6")
+region = Rect2(5760, 3240, 1920, 1080)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_raxss"]
+atlas = ExtResource("2_pqhw6")
+region = Rect2(7680, 3240, 1920, 1080)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_l6mrk"]
+atlas = ExtResource("2_pqhw6")
+region = Rect2(0, 4320, 1920, 1080)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_osk6j"]
+atlas = ExtResource("2_pqhw6")
+region = Rect2(1920, 4320, 1920, 1080)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_psot4"]
+atlas = ExtResource("2_pqhw6")
+region = Rect2(3840, 4320, 1920, 1080)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_vg2e3"]
+atlas = ExtResource("2_pqhw6")
+region = Rect2(5760, 4320, 1920, 1080)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_qlx3c"]
+atlas = ExtResource("2_pqhw6")
+region = Rect2(7680, 4320, 1920, 1080)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_hikxb"]
+atlas = ExtResource("2_pqhw6")
+region = Rect2(0, 5400, 1920, 1080)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ayeso"]
+atlas = ExtResource("2_pqhw6")
+region = Rect2(1920, 5400, 1920, 1080)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_0ftiw"]
+atlas = ExtResource("2_pqhw6")
+region = Rect2(3840, 5400, 1920, 1080)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_0di7n"]
+atlas = ExtResource("2_pqhw6")
+region = Rect2(5760, 5400, 1920, 1080)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_8i7wd"]
+atlas = ExtResource("2_pqhw6")
+region = Rect2(7680, 5400, 1920, 1080)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_rn5bg"]
+atlas = ExtResource("2_pqhw6")
+region = Rect2(0, 6480, 1920, 1080)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_0p1he"]
+atlas = ExtResource("2_pqhw6")
+region = Rect2(1920, 6480, 1920, 1080)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_kujtf"]
+atlas = ExtResource("2_pqhw6")
+region = Rect2(3840, 6480, 1920, 1080)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_wvnfb"]
+atlas = ExtResource("2_pqhw6")
+region = Rect2(5760, 6480, 1920, 1080)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_b4nis"]
 atlas = ExtResource("2_pqhw6")
@@ -79,6 +143,64 @@ region = Rect2(3840, 3240, 1920, 1080)
 animations = [{
 "frames": [{
 "duration": 1.0,
+"texture": SubResource("AtlasTexture_gdhdb")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_raxss")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_l6mrk")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_osk6j")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_psot4")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_vg2e3")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_qlx3c")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_hikxb")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ayeso")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_0ftiw")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_0di7n")
+}],
+"loop": true,
+"name": &"attack",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_8i7wd")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_rn5bg")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_0p1he")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_kujtf")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_wvnfb")
+}],
+"loop": true,
+"name": &"death",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
 "texture": SubResource("AtlasTexture_b4nis")
 }, {
 "duration": 1.0,
@@ -153,7 +275,8 @@ script = ExtResource("1_pqhw6")
 position = Vector2(0, -55)
 scale = Vector2(0.5, 0.5)
 sprite_frames = SubResource("SpriteFrames_68dbu")
-animation = &"walk"
+animation = &"death"
+frame_progress = 0.9670285
 
 [node name="RichTextLabel" type="RichTextLabel" parent="."]
 offset_left = -141.0
