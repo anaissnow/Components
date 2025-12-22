@@ -19,6 +19,7 @@ config/icon="res://icon.svg"
 
 PromptList="*res://scripts/prompt_list.gd"
 GlobalSignals="*res://scripts/GlobalSignals.gd"
+DialogueManager="*res://addons/dialogue_manager/dialogue_manager.gd"
 
 [display]
 
@@ -27,7 +28,7 @@ window/stretch/aspect="expand"
 
 [editor_plugins]
 
-enabled=PackedStringArray("res://addons/script-ide/plugin.cfg")
+enabled=PackedStringArray("res://addons/dialogue_manager/plugin.cfg", "res://addons/script-ide/plugin.cfg")
 
 [global_group]
 
