@@ -1,8 +1,11 @@
-[gd_scene load_steps=6 format=3 uid="uid://b11tmrx6u71ww"]
+[gd_scene load_steps=9 format=3 uid="uid://b11tmrx6u71ww"]
 
 [ext_resource type="Theme" uid="uid://cqcpovk8aw7nw" path="res://resources/retro_ui_theme.tres" id="1_7cqs2"]
+[ext_resource type="Script" uid="uid://jaw0ical3ry4" path="res://scenes/option menu/options_menu.gd" id="1_cwh60"]
 [ext_resource type="FontFile" uid="uid://baqpv7w04b4ts" path="res://resources/fonts/Spirax/Spirax-Regular.ttf" id="2_cwh60"]
 [ext_resource type="Texture2D" uid="uid://boeoxbp1cjn0g" path="res://resources/Retro.png" id="3_r73og"]
+[ext_resource type="PackedScene" uid="uid://daxruh4fy8ngw" path="res://scenes/option menu/window_mode.tscn" id="5_fngqs"]
+[ext_resource type="PackedScene" uid="uid://da3cttm25albn" path="res://scenes/option menu/window_resolution.tscn" id="6_hud2k"]
 
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_fngqs"]
 texture = ExtResource("3_r73og")
@@ -21,6 +24,7 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+script = ExtResource("1_cwh60")
 
 [node name="MarginContainer" type="MarginContainer" parent="."]
 layout_mode = 1
@@ -47,15 +51,55 @@ theme_override_styles/tab_hovered = SubResource("StyleBoxTexture_hud2k")
 theme_override_styles/tab_selected = SubResource("StyleBoxTexture_hud2k")
 theme_override_styles/tab_focus = SubResource("StyleBoxTexture_hud2k")
 tab_alignment = 1
-current_tab = 0
+current_tab = 1
 
 [node name="Sound" type="TabBar" parent="MarginContainer/TabContainer"]
+visible = false
 layout_mode = 2
 tab_alignment = 1
 metadata/_tab_index = 0
 
 [node name="Graphics" type="TabBar" parent="MarginContainer/TabContainer"]
-visible = false
 layout_mode = 2
 tab_alignment = 1
 metadata/_tab_index = 1
+
+[node name="MarginContainer" type="MarginContainer" parent="MarginContainer/TabContainer/Graphics"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/margin_left = 50
+theme_override_constants/margin_top = 50
+theme_override_constants/margin_right = 50
+theme_override_constants/margin_bottom = 50
+
+[node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer/TabContainer/Graphics/MarginContainer"]
+layout_mode = 2
+theme_override_constants/separation = 150
+
+[node name="Window_Mode" parent="MarginContainer/TabContainer/Graphics/MarginContainer/VBoxContainer" instance=ExtResource("5_fngqs")]
+layout_mode = 2
+
+[node name="Window_Resolution" parent="MarginContainer/TabContainer/Graphics/MarginContainer/VBoxContainer" instance=ExtResource("6_hud2k")]
+layout_mode = 2
+
+[node name="ExitMenuButton" type="Button" parent="."]
+layout_mode = 1
+anchors_preset = 12
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 420.0
+offset_top = -47.0
+offset_right = -420.0
+grow_horizontal = 2
+grow_vertical = 0
+mouse_filter = 1
+theme_override_fonts/font = ExtResource("2_cwh60")
+theme_override_font_sizes/font_size = 28
+text = "Exit"
+
+[connection signal="pressed" from="ExitMenuButton" to="." method="_on_exit_menu_button_pressed"]

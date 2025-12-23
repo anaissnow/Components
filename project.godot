@@ -20,9 +20,11 @@ config/icon="res://icon.svg"
 PromptList="*res://scripts/prompt_list.gd"
 GlobalSignals="*res://scripts/GlobalSignals.gd"
 DialogueManager="*res://addons/dialogue_manager/dialogue_manager.gd"
+PlayerHud="*res://scenes/player_hud.tscn"
 
 [display]
 
+window/size/mode=3
 window/stretch/mode="canvas_items"
 window/stretch/aspect="expand"
 
