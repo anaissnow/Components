@@ -112,3 +112,7 @@ func _on_restart_button_pressed() -> void:
 
 func _on_quit_button_pressed() -> void:
 	get_tree().change_scene_to_file("res://scenes/main_menu.tscn")
+
+
+func _on_pause_button_pressed() -> void:
+	get_tree().change_scene_to_file("res://scenes/option menu/option_menu.tscn")

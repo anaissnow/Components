@@ -41,7 +41,7 @@ theme_override_constants/margin_bottom = 50
 
 [node name="TabContainer" type="TabContainer" parent="MarginContainer"]
 layout_mode = 2
-theme_override_constants/tab_separation = 48
+theme_override_constants/tab_separation = 60
 theme_override_fonts/font = ExtResource("2_cwh60")
 theme_override_font_sizes/font_size = 24
 theme_override_styles/panel = SubResource("StyleBoxTexture_fngqs")

@@ -37,6 +37,12 @@ enabled=PackedStringArray("res://addons/dialogue_manager/plugin.cfg", "res://add
 Player=""
 Enemy=""
 
+[layer_names]
+
+2d_render/layer_1="Entities"
+2d_render/layer_3="Environment"
+2d_render/layer_7="Background"
+
 [rendering]
 
 textures/canvas_textures/default_texture_filter=0

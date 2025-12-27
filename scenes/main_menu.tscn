@@ -3,10 +3,10 @@
 [ext_resource type="FontFile" uid="uid://d2gw78mxtuajg" path="res://resources/fonts/MedievalSharp/MedievalSharp-Regular.ttf" id="1_l6cm7"]
 [ext_resource type="Script" uid="uid://1r370tikveaj" path="res://scripts/main_menu.gd" id="1_wu84c"]
 [ext_resource type="FontFile" uid="uid://baqpv7w04b4ts" path="res://resources/fonts/Spirax/Spirax-Regular.ttf" id="2_ekxnf"]
-[ext_resource type="Texture2D" uid="uid://bsu3mkkaxexml" path="res://resources/spritesheets/background/bg_0.png" id="2_oa1go"]
+[ext_resource type="Texture2D" uid="uid://bsu3mkkaxexml" path="res://resources/spritesheets/background/parallax/bg_0.png" id="2_oa1go"]
 [ext_resource type="Theme" uid="uid://cqcpovk8aw7nw" path="res://resources/retro_ui_theme.tres" id="3_bqqt6"]
-[ext_resource type="Texture2D" uid="uid://nj35hke5gsjr" path="res://resources/spritesheets/background/bg_1.png" id="3_tbmy8"]
-[ext_resource type="Texture2D" uid="uid://dqeeeeocijyqf" path="res://resources/spritesheets/background/bg_2.png" id="4_jk1qb"]
+[ext_resource type="Texture2D" uid="uid://nj35hke5gsjr" path="res://resources/spritesheets/background/parallax/bg_1.png" id="3_tbmy8"]
+[ext_resource type="Texture2D" uid="uid://dqeeeeocijyqf" path="res://resources/spritesheets/background/parallax/bg_2.png" id="4_jk1qb"]
 
 [node name="Main_Menu" type="Control"]
 layout_mode = 3
