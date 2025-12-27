@@ -82,7 +82,7 @@ func _on_difficulty_timer_timeout() -> void:
 	difficulty_value.text = str(difficulty)
 
 
-func _on_lose_area_body_entered(body: Node2D) -> void:
+func _on_lose_area_body_entered(_body: Node2D) -> void:
 	game_over()
 
 func game_over():
@@ -115,4 +115,5 @@ func _on_quit_button_pressed() -> void:
 
 
 func _on_pause_button_pressed() -> void:
-	get_tree().change_scene_to_file("res://scenes/option menu/option_menu.tscn")
+	$CanvasLayer/PauseMenu.show()
+	get_tree().paused = true

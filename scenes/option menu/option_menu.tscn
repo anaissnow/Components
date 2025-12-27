@@ -1,4 +1,4 @@
-[gd_scene load_steps=9 format=3 uid="uid://b11tmrx6u71ww"]
+[gd_scene load_steps=10 format=3 uid="uid://b11tmrx6u71ww"]
 
 [ext_resource type="Theme" uid="uid://cqcpovk8aw7nw" path="res://resources/retro_ui_theme.tres" id="1_7cqs2"]
 [ext_resource type="Script" uid="uid://jaw0ical3ry4" path="res://scenes/option menu/options_menu.gd" id="1_cwh60"]
@@ -16,6 +16,8 @@ texture = ExtResource("3_r73og")
 expand_margin_left = 20.0
 expand_margin_right = 20.0
 region_rect = Rect2(353, 67, 14, 10)
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_fngqs"]
 
 [node name="OptionMenu" type="Control"]
 layout_mode = 3
@@ -97,9 +99,11 @@ offset_top = -47.0
 offset_right = -420.0
 grow_horizontal = 2
 grow_vertical = 0
-mouse_filter = 1
+theme = ExtResource("1_7cqs2")
 theme_override_fonts/font = ExtResource("2_cwh60")
 theme_override_font_sizes/font_size = 28
+theme_override_styles/focus = SubResource("StyleBoxEmpty_fngqs")
+action_mode = 0
 text = "Exit"
 
 [connection signal="pressed" from="ExitMenuButton" to="." method="_on_exit_menu_button_pressed"]

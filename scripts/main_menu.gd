@@ -1,9 +1,9 @@
 extends Control
 
 
-@onready var play_button: Button = $VBoxContainer/PlayButton
-@onready var option_button: Button = $VBoxContainer/OptionButton
-@onready var quit_button: Button = $VBoxContainer/QuitButton
+@onready var play_button: Button = $CanvasLayer/VBoxContainer/PlayButton
+@onready var option_button: Button = $CanvasLayer/VBoxContainer/OptionButton
+@onready var quit_button: Button = $CanvasLayer/VBoxContainer/QuitButton
 @onready var start_level = preload("res://scenes/main.tscn")
 @onready var options_menu = preload("res://scenes/option menu/option_menu.tscn")
 
