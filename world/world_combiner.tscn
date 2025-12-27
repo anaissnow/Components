@@ -1,7 +1,0 @@
-[gd_scene format=3 uid="uid://dxkqlcfg2pbsl"]
-
-[node name="WorldCombiner" type="CSGCombiner3D"]
-use_collision = true
-
-[node name="CSGBox3D" type="CSGBox3D" parent="."]
-size = Vector3(50, 0.01, 50)
