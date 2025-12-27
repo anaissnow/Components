@@ -28,7 +28,7 @@ color = Color(0.45627975, 0.5673144, 0.92641634, 1)
 z_index = -1
 offset_left = -45.0
 offset_top = 526.0
-offset_right = 1229.0
+offset_right = 1234.0
 offset_bottom = 693.0
 color = Color(0.19802243, 0.55921644, 0.25186008, 1)
 
@@ -45,13 +45,11 @@ texture = ExtResource("3_o6xl0")
 [node name="Sprite2D3" type="Sprite2D" parent="Parallax2D"]
 z_index = 2
 position = Vector2(840, 493)
-scale = Vector2(2.5, 2.5)
 texture = ExtResource("4_tipki")
 
 [node name="Sprite2D4" type="Sprite2D" parent="Parallax2D"]
 z_index = 2
 position = Vector2(496.00018, 439)
-scale = Vector2(3.5, 3.5)
 texture = ExtResource("5_85g3d")
 
 [node name="LoseArea" type="Area2D" parent="."]
