@@ -4,7 +4,6 @@ extends Node2D
 @onready var spawn_container = $SpawnContainer
 @onready var spawn_timer = $SpawnTimer
 @onready var difficulty_timer = $DifficultyTimer
-@onready var sfx_player: AudioStreamPlayer = $CanvasLayer/SFX_Player
 
 @onready var difficulty_value = $CanvasLayer/VBoxContainer/BottomRow/HBoxContainer/DifficultyValue
 @onready var killed_value = $CanvasLayer/VBoxContainer/CenterTopRow/TopRow/EnemiesKilledValue
@@ -87,6 +86,8 @@ func _on_lose_area_body_entered(_body: Node2D) -> void:
 	game_over()
 
 func game_over():
+	AudioController.play_end_level()
+	await get_tree().create_timer(1).timeout
 	game_over_screen.show()
 	spawn_timer.stop()
 	difficulty_timer.stop()
@@ -107,20 +108,18 @@ func start_game():
 	spawn_enemy()
 
 func _on_restart_button_pressed() -> void:
-	sfx_player.play()
-	await sfx_player.finished
+	AudioController.play_button_sfx()
+	await AudioController.finished
 	# clear out any existing enemies, reset connection, etc.
 	start_game()
 
 
 func _on_quit_button_pressed() -> void:
-	sfx_player.play()
-	await sfx_player.finished
-	get_tree().change_scene_to_file("res://scenes/main_menu.tscn")
+	AudioController.play_button_sfx()
+	get_tree().change_scene_to_file("res://scenes/option menu/scenes/end_credits/end_credits.tscn")
 
 
 func _on_pause_button_pressed() -> void:
-	sfx_player.play()
-	await sfx_player.finished
+	AudioController.play_button_sfx()
 	$CanvasLayer/PauseMenu.show()
 	get_tree().paused = true

@@ -26,7 +26,6 @@ texture = ExtResource("1_mlvnn")
 region_rect = Rect2(336, 329, 48, 3)
 
 [node name="PlayerHUD" type="Control"]
-visible = false
 layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0

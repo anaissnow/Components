@@ -19,6 +19,10 @@ func _ready() -> void:
 func _physics_process(delta: float) -> void:
 	global_position.x -= speed
 	animated_sprite_2d.play("walk")
+	AudioController.play_movement()
+
+func is_dead():
+	animated_sprite_2d.play("death")
 
 func set_difficulty(difficulty: int):
 	handle_difficulty_increased(difficulty)

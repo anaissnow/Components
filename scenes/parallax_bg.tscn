@@ -10,6 +10,8 @@
 [node name="Background" type="Parallax2D" parent="."]
 scroll_scale = Vector2(0.05, 0.05)
 repeat_size = Vector2(1152, 0)
+autoscroll = Vector2(-2, 0)
+follow_viewport = false
 
 [node name="Sprite2D" type="Sprite2D" parent="Background"]
 position = Vector2(576, 324)
@@ -17,8 +19,10 @@ scale = Vector2(4.7999997, 4.05)
 texture = ExtResource("1_opv8y")
 
 [node name="Midground" type="Parallax2D" parent="."]
-scroll_scale = Vector2(1.5, 1.5)
+scroll_scale = Vector2(0.5, 0.5)
 repeat_size = Vector2(1152, 0)
+autoscroll = Vector2(-1, 0)
+follow_viewport = false
 
 [node name="Sprite2D" type="Sprite2D" parent="Midground"]
 position = Vector2(576, 324)
@@ -26,7 +30,10 @@ scale = Vector2(4.8, 4.05)
 texture = ExtResource("2_llcxi")
 
 [node name="Foreground" type="Parallax2D" parent="."]
+scroll_scale = Vector2(0.2, 0.2)
 repeat_size = Vector2(1152, 0)
+autoscroll = Vector2(0.5, 0)
+follow_viewport = false
 
 [node name="Sprite2D" type="Sprite2D" parent="Foreground"]
 position = Vector2(576, 324)
@@ -34,7 +41,10 @@ scale = Vector2(4.7999997, 4.05)
 texture = ExtResource("3_4j2lk")
 
 [node name="Foreground2" type="Parallax2D" parent="."]
+scroll_scale = Vector2(-0.1, -0.1)
 repeat_size = Vector2(1152, 0)
+autoscroll = Vector2(1, 0)
+follow_viewport = false
 
 [node name="Sprite2D" type="Sprite2D" parent="Foreground2"]
 position = Vector2(576, 324)
