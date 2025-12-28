@@ -12,12 +12,16 @@ limit = 3
 
 [node name="BGM" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("2_gohoa")
+bus = &"BGM"
 
 [node name="Movement" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("1_r37hc")
+bus = &"SFX"
 
 [node name="EndLevel" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("4_m7jsx")
+bus = &"BGM"
 
 [node name="ButtonSound" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("5_m7jsx")
+bus = &"SFX"

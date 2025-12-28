@@ -6,6 +6,9 @@
 [node name="Window_Resolution" instance=ExtResource("1_n0ttc")]
 script = ExtResource("2_w6ntr")
 
+[node name="HBoxContainer" parent="." index="0"]
+theme_override_constants/separation = 120
+
 [node name="Label" parent="HBoxContainer" index="0"]
 text = "Resolution Scale"
 vertical_alignment = 1
