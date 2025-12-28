@@ -1,11 +1,16 @@
-[gd_scene load_steps=10 format=3 uid="uid://b11tmrx6u71ww"]
+[gd_scene load_steps=15 format=3 uid="uid://b11tmrx6u71ww"]
 
 [ext_resource type="Theme" uid="uid://cqcpovk8aw7nw" path="res://resources/retro_ui_theme.tres" id="1_7cqs2"]
 [ext_resource type="Script" uid="uid://jaw0ical3ry4" path="res://scenes/option menu/options_menu.gd" id="1_cwh60"]
+[ext_resource type="Texture2D" uid="uid://bsu3mkkaxexml" path="res://resources/spritesheets/background/parallax/bg_0.png" id="2_4go4x"]
 [ext_resource type="FontFile" uid="uid://baqpv7w04b4ts" path="res://resources/fonts/Spirax/Spirax-Regular.ttf" id="2_cwh60"]
+[ext_resource type="Texture2D" uid="uid://nj35hke5gsjr" path="res://resources/spritesheets/background/parallax/bg_1.png" id="3_gegwa"]
 [ext_resource type="Texture2D" uid="uid://boeoxbp1cjn0g" path="res://resources/Retro.png" id="3_r73og"]
+[ext_resource type="Texture2D" uid="uid://dqeeeeocijyqf" path="res://resources/spritesheets/background/parallax/bg_2.png" id="4_t57ax"]
+[ext_resource type="Texture2D" uid="uid://cf7gntheqnmvg" path="res://resources/spritesheets/background/parallax/fg_1.png" id="5_b2ogo"]
 [ext_resource type="PackedScene" uid="uid://daxruh4fy8ngw" path="res://scenes/option menu/window_mode.tscn" id="5_fngqs"]
 [ext_resource type="PackedScene" uid="uid://da3cttm25albn" path="res://scenes/option menu/window_resolution.tscn" id="6_hud2k"]
+[ext_resource type="PackedScene" uid="uid://bnlhauc1v7nbq" path="res://scenes/sfx_player.tscn" id="11_gegwa"]
 
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_fngqs"]
 texture = ExtResource("3_r73og")
@@ -28,6 +33,28 @@ grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_cwh60")
 
+[node name="Background" type="Node2D" parent="."]
+
+[node name="Sprite2D" type="Sprite2D" parent="Background"]
+position = Vector2(576, 324)
+scale = Vector2(4.8, 4.05)
+texture = ExtResource("2_4go4x")
+
+[node name="Sprite2D2" type="Sprite2D" parent="Background"]
+position = Vector2(576, 324)
+scale = Vector2(4.8, 4.05)
+texture = ExtResource("3_gegwa")
+
+[node name="Sprite2D3" type="Sprite2D" parent="Background"]
+position = Vector2(576, 324)
+scale = Vector2(4.8, 4.05)
+texture = ExtResource("4_t57ax")
+
+[node name="Sprite2D4" type="Sprite2D" parent="Background"]
+position = Vector2(576, 324)
+scale = Vector2(4.8, 4.05)
+texture = ExtResource("5_b2ogo")
+
 [node name="MarginContainer" type="MarginContainer" parent="."]
 layout_mode = 1
 anchors_preset = 15
@@ -40,6 +67,7 @@ theme_override_constants/margin_left = 100
 theme_override_constants/margin_top = 50
 theme_override_constants/margin_right = 100
 theme_override_constants/margin_bottom = 50
+metadata/_edit_lock_ = true
 
 [node name="TabContainer" type="TabContainer" parent="MarginContainer"]
 layout_mode = 2
@@ -105,5 +133,7 @@ theme_override_font_sizes/font_size = 28
 theme_override_styles/focus = SubResource("StyleBoxEmpty_fngqs")
 action_mode = 0
 text = "Exit"
+
+[node name="SFX_Player" parent="." instance=ExtResource("11_gegwa")]
 
 [connection signal="pressed" from="ExitMenuButton" to="." method="_on_exit_menu_button_pressed"]

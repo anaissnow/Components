@@ -4,6 +4,7 @@ extends Node2D
 @onready var spawn_container = $SpawnContainer
 @onready var spawn_timer = $SpawnTimer
 @onready var difficulty_timer = $DifficultyTimer
+@onready var sfx_player: AudioStreamPlayer = $CanvasLayer/SFX_Player
 
 @onready var difficulty_value = $CanvasLayer/VBoxContainer/BottomRow/HBoxContainer/DifficultyValue
 @onready var killed_value = $CanvasLayer/VBoxContainer/CenterTopRow/TopRow/EnemiesKilledValue
@@ -106,14 +107,20 @@ func start_game():
 	spawn_enemy()
 
 func _on_restart_button_pressed() -> void:
+	sfx_player.play()
+	await sfx_player.finished
 	# clear out any existing enemies, reset connection, etc.
 	start_game()
 
 
 func _on_quit_button_pressed() -> void:
+	sfx_player.play()
+	await sfx_player.finished
 	get_tree().change_scene_to_file("res://scenes/main_menu.tscn")
 
 
 func _on_pause_button_pressed() -> void:
+	sfx_player.play()
+	await sfx_player.finished
 	$CanvasLayer/PauseMenu.show()
 	get_tree().paused = true

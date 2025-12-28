@@ -1,0 +1,8 @@
+[gd_scene load_steps=2 format=3 uid="uid://bnlhauc1v7nbq"]
+
+[ext_resource type="AudioStream" uid="uid://ucfsjtm0rsdi" path="res://resources/sfx/Wood Block1.ogg" id="1_fiegy"]
+
+[node name="SFX_Player" type="AudioStreamPlayer"]
+stream = ExtResource("1_fiegy")
+volume_db = -5.0
+playback_type = 1
