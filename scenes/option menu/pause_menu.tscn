@@ -1,13 +1,8 @@
-[gd_scene load_steps=7 format=3 uid="uid://nix3wvtj7k1q"]
+[gd_scene load_steps=5 format=3 uid="uid://bymqlyv37570p"]
 
 [ext_resource type="Script" uid="uid://thwqe1n5qca3" path="res://scenes/pause_menu.gd" id="1_6wg6m"]
-[ext_resource type="Shader" uid="uid://dw2fjwexbwloj" path="res://scenes/option menu/pause_menu.gdshader" id="2_1834n"]
 [ext_resource type="Theme" uid="uid://cqcpovk8aw7nw" path="res://resources/retro_ui_theme.tres" id="2_uoyy8"]
-[ext_resource type="PackedScene" uid="uid://bnlhauc1v7nbq" path="res://scenes/sfx_player.tscn" id="4_1834n"]
-
-[sub_resource type="ShaderMaterial" id="ShaderMaterial_wro1w"]
-shader = ExtResource("2_1834n")
-shader_parameter/lod = 0.886000042085
+[ext_resource type="PackedScene" uid="uid://3og35wgmg48k" path="res://resources/sfx/audio_controller.tscn" id="3_uoyy8"]
 
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_1834n"]
 
@@ -21,16 +16,6 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_6wg6m")
-
-[node name="Blur" type="ColorRect" parent="."]
-material = SubResource("ShaderMaterial_wro1w")
-layout_mode = 1
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-grow_horizontal = 2
-grow_vertical = 2
-color = Color(0.31061712, 0.31061712, 0.3106171, 1)
 
 [node name="PanelContainer" type="PanelContainer" parent="."]
 layout_mode = 1
@@ -70,7 +55,7 @@ layout_mode = 2
 theme = ExtResource("2_uoyy8")
 text = "MAIN MENU"
 
-[node name="SFX_Player" parent="." instance=ExtResource("4_1834n")]
+[node name="AudioController" parent="." instance=ExtResource("3_uoyy8")]
 
 [connection signal="pressed" from="PanelContainer/VBoxContainer/ResumeButton" to="." method="_on_resume_button_pressed"]
 [connection signal="pressed" from="PanelContainer/VBoxContainer/RestartButton" to="." method="_on_restart_button_pressed"]

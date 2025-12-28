@@ -11,7 +11,7 @@
 [ext_resource type="PackedScene" uid="uid://daxruh4fy8ngw" path="res://scenes/option menu/window_mode.tscn" id="5_fngqs"]
 [ext_resource type="PackedScene" uid="uid://da3cttm25albn" path="res://scenes/option menu/window_resolution.tscn" id="6_hud2k"]
 [ext_resource type="PackedScene" uid="uid://c6lqm1nh7jek0" path="res://scenes/option menu/audio_slider_settings.tscn" id="9_t57ax"]
-[ext_resource type="PackedScene" uid="uid://bnlhauc1v7nbq" path="res://scenes/sfx_player.tscn" id="11_gegwa"]
+[ext_resource type="PackedScene" uid="uid://3og35wgmg48k" path="res://resources/sfx/audio_controller.tscn" id="12_t57ax"]
 
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_fngqs"]
 texture = ExtResource("3_r73og")
@@ -23,7 +23,7 @@ expand_margin_left = 20.0
 expand_margin_right = 20.0
 region_rect = Rect2(353, 67, 14, 10)
 
-[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_fngqs"]
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_t57ax"]
 
 [node name="OptionMenu" type="Control"]
 layout_mode = 3
@@ -162,11 +162,10 @@ grow_vertical = 0
 theme = ExtResource("1_7cqs2")
 theme_override_fonts/font = ExtResource("2_cwh60")
 theme_override_font_sizes/font_size = 28
-theme_override_styles/focus = SubResource("StyleBoxEmpty_fngqs")
+theme_override_styles/focus = SubResource("StyleBoxEmpty_t57ax")
 action_mode = 0
 text = "Exit"
 
-[node name="SFX_Player" parent="." instance=ExtResource("11_gegwa")]
-stream = null
+[node name="AudioController" parent="." instance=ExtResource("12_t57ax")]
 
 [connection signal="pressed" from="ExitMenuButton" to="." method="_on_exit_menu_button_pressed"]

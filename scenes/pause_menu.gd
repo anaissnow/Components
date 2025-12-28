@@ -1,7 +1,6 @@
 extends Control
 
 @onready var game_level = preload("res://scenes/main.tscn")
-@onready var sfx_player: AudioStreamPlayer = $SFX_Player
 
 func resume():
 	self.hide()
@@ -12,21 +11,18 @@ func pause():
 
 
 func _on_main_menu_button_pressed() -> void:
-	sfx_player.play()
-	await sfx_player.finished
+	AudioController.play_button_sfx()
 	get_tree().paused = false
 	get_tree().change_scene_to_file("res://scenes/main_menu.tscn")
 
 
 func _on_restart_button_pressed() -> void:
-	sfx_player.play()
-	await sfx_player.finished
+	AudioController.play_button_sfx()
 	get_tree().paused = false
 	get_tree().call_deferred("reload_current_scene")
 
 
 func _on_resume_button_pressed() -> void:
-	sfx_player.play()
-	await sfx_player.finished
+	AudioController.play_button_sfx()
 	resume()
 	get_tree().paused = false
