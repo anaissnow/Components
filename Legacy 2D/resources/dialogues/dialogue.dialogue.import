@@ -1,0 +1,16 @@
+[remap]
+
+importer="dialogue_manager"
+importer_version=15
+type="Resource"
+uid="uid://dfesjlm3aexrl"
+path="res://.godot/imported/dialogue.dialogue-9912513edf7522cb127588d938a903c4.tres"
+
+[deps]
+
+source_file="res://Legacy 2D/resources/dialogues/dialogue.dialogue"
+dest_files=["res://.godot/imported/dialogue.dialogue-9912513edf7522cb127588d938a903c4.tres"]
+
+[params]
+
+defaults=true

@@ -8,19 +8,23 @@
 
 config_version=5
 
+[animation]
+
+compatibility/default_parent_skeleton_in_mesh_instance_3d=true
+
 [application]
 
 config/name="Components"
 run/main_scene="uid://sb4kjeceuvh7"
-config/features=PackedStringArray("4.5", "Forward Plus")
+config/features=PackedStringArray("4.6", "Forward Plus")
 config/icon="res://icon.svg"
 
 [autoload]
 
-PromptList="*res://scripts/prompt_list.gd"
-GlobalSignals="*res://scripts/GlobalSignals.gd"
+PromptList="*res://Legacy 2D/scripts/prompt_list.gd"
+GlobalSignals="*res://Legacy 2D/scripts/GlobalSignals.gd"
 DialogueManager="*res://addons/dialogue_manager/dialogue_manager.gd"
-AudioController="*res://resources/sfx/audio_controller.tscn"
+AudioController="*res://Legacy 2D/resources/sfx/audio_controller.tscn"
 
 [display]
 
@@ -40,7 +44,7 @@ Button=""
 
 [internationalization]
 
-locale/translations_pot_files=PackedStringArray("res://resources/dialogues/dialogue.dialogue")
+locale/translations_pot_files=PackedStringArray("res://Legacy 2D/resources/dialogues/dialogue.dialogue")
 
 [layer_names]
 

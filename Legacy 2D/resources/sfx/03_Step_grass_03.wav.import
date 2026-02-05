@@ -1,0 +1,24 @@
+[remap]
+
+importer="wav"
+type="AudioStreamWAV"
+uid="uid://mcppr8rpq6lg"
+path="res://.godot/imported/03_Step_grass_03.wav-f64b668fa3fca7972f74e7b2b69ee67c.sample"
+
+[deps]
+
+source_file="res://Legacy 2D/resources/sfx/03_Step_grass_03.wav"
+dest_files=["res://.godot/imported/03_Step_grass_03.wav-f64b668fa3fca7972f74e7b2b69ee67c.sample"]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop_mode=0
+edit/loop_begin=0
+edit/loop_end=-1
+compress/mode=2

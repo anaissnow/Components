@@ -1,0 +1,171 @@
+[gd_scene format=3 uid="uid://b11tmrx6u71ww"]
+
+[ext_resource type="Theme" uid="uid://cqcpovk8aw7nw" path="res://Legacy 2D/resources/retro_ui_theme.tres" id="1_7cqs2"]
+[ext_resource type="Script" uid="uid://jaw0ical3ry4" path="res://Legacy 2D/scenes/option menu/options_menu.gd" id="1_cwh60"]
+[ext_resource type="Texture2D" uid="uid://bsu3mkkaxexml" path="res://Legacy 2D/resources/spritesheets/background/parallax/bg_0.png" id="2_4go4x"]
+[ext_resource type="FontFile" uid="uid://baqpv7w04b4ts" path="res://Legacy 2D/resources/fonts/Spirax/Spirax-Regular.ttf" id="2_cwh60"]
+[ext_resource type="Texture2D" uid="uid://nj35hke5gsjr" path="res://Legacy 2D/resources/spritesheets/background/parallax/bg_1.png" id="3_gegwa"]
+[ext_resource type="Texture2D" uid="uid://boeoxbp1cjn0g" path="res://Legacy 2D/resources/Retro.png" id="3_r73og"]
+[ext_resource type="Texture2D" uid="uid://dqeeeeocijyqf" path="res://Legacy 2D/resources/spritesheets/background/parallax/bg_2.png" id="4_t57ax"]
+[ext_resource type="Texture2D" uid="uid://cf7gntheqnmvg" path="res://Legacy 2D/resources/spritesheets/background/parallax/fg_1.png" id="5_b2ogo"]
+[ext_resource type="PackedScene" uid="uid://daxruh4fy8ngw" path="res://Legacy 2D/scenes/option menu/window_mode.tscn" id="5_fngqs"]
+[ext_resource type="PackedScene" uid="uid://da3cttm25albn" path="res://Legacy 2D/scenes/option menu/window_resolution.tscn" id="6_hud2k"]
+[ext_resource type="PackedScene" uid="uid://c6lqm1nh7jek0" path="res://Legacy 2D/scenes/option menu/audio_slider_settings.tscn" id="9_t57ax"]
+[ext_resource type="PackedScene" uid="uid://3og35wgmg48k" path="res://Legacy 2D/resources/sfx/audio_controller.tscn" id="12_t57ax"]
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_fngqs"]
+texture = ExtResource("3_r73og")
+region_rect = Rect2(6, 80, 85, 112)
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_hud2k"]
+texture = ExtResource("3_r73og")
+expand_margin_left = 20.0
+expand_margin_right = 20.0
+region_rect = Rect2(353, 67, 14, 10)
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_t57ax"]
+
+[node name="OptionMenu" type="Control" unique_id=1333079683]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_cwh60")
+
+[node name="Background" type="Node2D" parent="." unique_id=1199028459]
+
+[node name="Sprite2D" type="Sprite2D" parent="Background" unique_id=1415635742]
+position = Vector2(576, 324)
+scale = Vector2(4.8, 4.05)
+texture = ExtResource("2_4go4x")
+
+[node name="Sprite2D2" type="Sprite2D" parent="Background" unique_id=987923312]
+position = Vector2(576, 324)
+scale = Vector2(4.8, 4.05)
+texture = ExtResource("3_gegwa")
+
+[node name="Sprite2D3" type="Sprite2D" parent="Background" unique_id=1167350811]
+position = Vector2(576, 324)
+scale = Vector2(4.8, 4.05)
+texture = ExtResource("4_t57ax")
+
+[node name="Sprite2D4" type="Sprite2D" parent="Background" unique_id=178299120]
+position = Vector2(576, 324)
+scale = Vector2(4.8, 4.05)
+texture = ExtResource("5_b2ogo")
+
+[node name="MarginContainer" type="MarginContainer" parent="." unique_id=809383509]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme = ExtResource("1_7cqs2")
+theme_override_constants/margin_left = 100
+theme_override_constants/margin_top = 50
+theme_override_constants/margin_right = 100
+theme_override_constants/margin_bottom = 50
+metadata/_edit_lock_ = true
+
+[node name="TabContainer" type="TabContainer" parent="MarginContainer" unique_id=2035956183]
+layout_mode = 2
+theme_override_constants/tab_separation = 60
+theme_override_fonts/font = ExtResource("2_cwh60")
+theme_override_font_sizes/font_size = 24
+theme_override_styles/panel = SubResource("StyleBoxTexture_fngqs")
+theme_override_styles/tabbar_background = SubResource("StyleBoxTexture_hud2k")
+theme_override_styles/tab_unselected = SubResource("StyleBoxTexture_hud2k")
+theme_override_styles/tab_hovered = SubResource("StyleBoxTexture_hud2k")
+theme_override_styles/tab_selected = SubResource("StyleBoxTexture_hud2k")
+theme_override_styles/tab_focus = SubResource("StyleBoxTexture_hud2k")
+tab_alignment = 1
+current_tab = 1
+
+[node name="Sound" type="TabBar" parent="MarginContainer/TabContainer" unique_id=501922786]
+visible = false
+layout_mode = 2
+tab_alignment = 1
+metadata/_tab_index = 0
+
+[node name="MarginContainer" type="MarginContainer" parent="MarginContainer/TabContainer/Sound" unique_id=2063033151]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 70.0
+offset_top = 32.0
+offset_right = -70.0
+offset_bottom = -32.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="ScrollContainer" type="ScrollContainer" parent="MarginContainer/TabContainer/Sound/MarginContainer" unique_id=767986058]
+layout_mode = 2
+
+[node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer/TabContainer/Sound/MarginContainer/ScrollContainer" unique_id=2072946384]
+layout_mode = 2
+theme_override_constants/separation = 64
+
+[node name="Audio_Slider_Settings" parent="MarginContainer/TabContainer/Sound/MarginContainer/ScrollContainer/VBoxContainer" unique_id=1370243894 instance=ExtResource("9_t57ax")]
+layout_mode = 2
+
+[node name="Audio_Slider_Settings2" parent="MarginContainer/TabContainer/Sound/MarginContainer/ScrollContainer/VBoxContainer" unique_id=1503016014 instance=ExtResource("9_t57ax")]
+layout_mode = 2
+bus_name = "BGM"
+
+[node name="Audio_Slider_Settings3" parent="MarginContainer/TabContainer/Sound/MarginContainer/ScrollContainer/VBoxContainer" unique_id=1423944400 instance=ExtResource("9_t57ax")]
+layout_mode = 2
+bus_name = "SFX"
+
+[node name="Graphics" type="TabBar" parent="MarginContainer/TabContainer" unique_id=235728699]
+layout_mode = 2
+tab_alignment = 1
+metadata/_tab_index = 1
+
+[node name="MarginContainer" type="MarginContainer" parent="MarginContainer/TabContainer/Graphics" unique_id=979466419]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 65.0
+offset_top = 31.0
+offset_right = -65.0
+offset_bottom = -31.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/margin_top = 50
+
+[node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer/TabContainer/Graphics/MarginContainer" unique_id=1168486711]
+layout_mode = 2
+theme_override_constants/separation = 150
+
+[node name="Window_Mode" parent="MarginContainer/TabContainer/Graphics/MarginContainer/VBoxContainer" unique_id=1571577532 instance=ExtResource("5_fngqs")]
+layout_mode = 2
+
+[node name="Window_Resolution" parent="MarginContainer/TabContainer/Graphics/MarginContainer/VBoxContainer" unique_id=1483033328 instance=ExtResource("6_hud2k")]
+layout_mode = 2
+
+[node name="ExitMenuButton" type="Button" parent="." unique_id=1941879438]
+layout_mode = 1
+anchors_preset = 12
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 420.0
+offset_top = -47.0
+offset_right = -420.0
+grow_horizontal = 2
+grow_vertical = 0
+theme = ExtResource("1_7cqs2")
+theme_override_fonts/font = ExtResource("2_cwh60")
+theme_override_font_sizes/font_size = 28
+theme_override_styles/focus = SubResource("StyleBoxEmpty_t57ax")
+action_mode = 0
+text = "Exit"
+
+[node name="AudioController" parent="." unique_id=1607358089 instance=ExtResource("12_t57ax")]
+
+[connection signal="pressed" from="ExitMenuButton" to="." method="_on_exit_menu_button_pressed"]

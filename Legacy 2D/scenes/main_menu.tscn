@@ -1,0 +1,118 @@
+[gd_scene format=3 uid="uid://sb4kjeceuvh7"]
+
+[ext_resource type="FontFile" uid="uid://d2gw78mxtuajg" path="res://Legacy 2D/resources/fonts/MedievalSharp/MedievalSharp-Regular.ttf" id="1_l6cm7"]
+[ext_resource type="Script" uid="uid://1r370tikveaj" path="res://Legacy 2D/scripts/main_menu.gd" id="1_wu84c"]
+[ext_resource type="FontFile" uid="uid://baqpv7w04b4ts" path="res://Legacy 2D/resources/fonts/Spirax/Spirax-Regular.ttf" id="2_ekxnf"]
+[ext_resource type="Texture2D" uid="uid://bsu3mkkaxexml" path="res://Legacy 2D/resources/spritesheets/background/parallax/bg_0.png" id="2_oa1go"]
+[ext_resource type="Theme" uid="uid://cqcpovk8aw7nw" path="res://Legacy 2D/resources/retro_ui_theme.tres" id="3_bqqt6"]
+[ext_resource type="Texture2D" uid="uid://nj35hke5gsjr" path="res://Legacy 2D/resources/spritesheets/background/parallax/bg_1.png" id="3_tbmy8"]
+[ext_resource type="Texture2D" uid="uid://dqeeeeocijyqf" path="res://Legacy 2D/resources/spritesheets/background/parallax/bg_2.png" id="4_jk1qb"]
+[ext_resource type="PackedScene" uid="uid://3og35wgmg48k" path="res://Legacy 2D/resources/sfx/audio_controller.tscn" id="8_tbmy8"]
+
+[node name="Main_Menu" type="Control" unique_id=99254059]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_wu84c")
+
+[node name="ParallaxBG" type="Node2D" parent="." unique_id=219697777]
+
+[node name="Background" type="Parallax2D" parent="ParallaxBG" unique_id=1411145341]
+scroll_scale = Vector2(0.05, 0.05)
+repeat_size = Vector2(1152, 0)
+autoscroll = Vector2(-1, 0)
+follow_viewport = false
+
+[node name="Sprite2D" type="Sprite2D" parent="ParallaxBG/Background" unique_id=901722033]
+position = Vector2(576, 324.00003)
+scale = Vector2(4.8, 4.05)
+texture = ExtResource("2_oa1go")
+
+[node name="Midground" type="Parallax2D" parent="ParallaxBG" unique_id=321093338]
+scroll_scale = Vector2(0.5, 0.5)
+repeat_size = Vector2(1152, 0)
+autoscroll = Vector2(1.5, 0)
+follow_viewport = false
+
+[node name="Sprite2D" type="Sprite2D" parent="ParallaxBG/Midground" unique_id=1638532038]
+position = Vector2(576, 324)
+scale = Vector2(4.7916665, 4.049999)
+texture = ExtResource("3_tbmy8")
+
+[node name="Foreground" type="Parallax2D" parent="ParallaxBG" unique_id=2124465305]
+repeat_size = Vector2(1152, 0)
+autoscroll = Vector2(2, 0)
+follow_viewport = false
+
+[node name="Sprite2D" type="Sprite2D" parent="ParallaxBG/Foreground" unique_id=1995887974]
+position = Vector2(576, 377.5)
+scale = Vector2(4.7999997, 3.38125)
+texture = ExtResource("4_jk1qb")
+
+[node name="CanvasLayer" type="CanvasLayer" parent="." unique_id=211613528]
+layer = 100
+
+[node name="RichTextLabel" type="RichTextLabel" parent="CanvasLayer" unique_id=174438603]
+offset_top = 165.0
+offset_right = 1152.0
+offset_bottom = 245.0
+theme_override_fonts/normal_font = ExtResource("1_l6cm7")
+theme_override_font_sizes/normal_font_size = 48
+bbcode_enabled = true
+text = "[wave]Kacang Hantu, Hati Hantu[/wave]"
+horizontal_alignment = 1
+vertical_alignment = 1
+metadata/_edit_lock_ = true
+
+[node name="Label" type="Label" parent="CanvasLayer" unique_id=943572267]
+offset_top = 255.0
+offset_right = 1152.0
+offset_bottom = 305.0
+theme_override_fonts/font = ExtResource("2_ekxnf")
+theme_override_font_sizes/font_size = 40
+text = "a typing game"
+horizontal_alignment = 1
+vertical_alignment = 1
+metadata/_edit_lock_ = true
+
+[node name="VBoxContainer" type="VBoxContainer" parent="CanvasLayer" unique_id=803838945]
+custom_minimum_size = Vector2(150, 0)
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -75.0
+offset_top = 42.5
+offset_right = 75.0
+offset_bottom = 202.5
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/separation = 20
+
+[node name="PlayButton" type="Button" parent="CanvasLayer/VBoxContainer" unique_id=1357263767 groups=["Button"]]
+custom_minimum_size = Vector2(0, 40)
+layout_mode = 2
+theme = ExtResource("3_bqqt6")
+text = "Play"
+
+[node name="OptionButton" type="Button" parent="CanvasLayer/VBoxContainer" unique_id=1242411391 groups=["Button"]]
+custom_minimum_size = Vector2(0, 40)
+layout_mode = 2
+theme = ExtResource("3_bqqt6")
+text = "Options"
+
+[node name="QuitButton" type="Button" parent="CanvasLayer/VBoxContainer" unique_id=411427340 groups=["Button"]]
+custom_minimum_size = Vector2(0, 40)
+layout_mode = 2
+theme = ExtResource("3_bqqt6")
+text = "Quit"
+
+[node name="AudioController" parent="." unique_id=2135544411 instance=ExtResource("8_tbmy8")]
+
+[connection signal="pressed" from="CanvasLayer/VBoxContainer/PlayButton" to="." method="_on_play_button_pressed"]
+[connection signal="pressed" from="CanvasLayer/VBoxContainer/OptionButton" to="." method="_on_option_button_pressed"]
+[connection signal="pressed" from="CanvasLayer/VBoxContainer/QuitButton" to="." method="_on_quit_button_pressed"]
