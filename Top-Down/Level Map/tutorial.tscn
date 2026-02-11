@@ -1,0 +1,11 @@
+[gd_scene format=3 uid="uid://bdp37r5fbo174"]
+
+[ext_resource type="PackedScene" uid="uid://bnlxh3e0rosbv" path="res://Top-Down/Level Map/forest_map.tscn" id="1_ufxr8"]
+[ext_resource type="PackedScene" uid="uid://brm5h0l5x340k" path="res://Legacy 2D/entities/player.tscn" id="2_te0f8"]
+
+[node name="Tutorial" type="Node2D" unique_id=1597673324]
+
+[node name="Forest Map" parent="." unique_id=862397189 instance=ExtResource("1_ufxr8")]
+
+[node name="Player" parent="." unique_id=963474216 instance=ExtResource("2_te0f8")]
+position = Vector2(350, 212)

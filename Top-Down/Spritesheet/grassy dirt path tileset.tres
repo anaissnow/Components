@@ -1,6 +1,14 @@
 [gd_resource type="TileSet" format=3 uid="uid://cftvibpfga5y4"]
 
 [ext_resource type="Texture2D" uid="uid://y4cibsrgupwm" path="res://Top-Down/Spritesheet/inverted grass path tileset.png" id="1_4naga"]
+[ext_resource type="Texture2D" uid="uid://dgq3a3fuvbk7e" path="res://Top-Down/Spritesheet/tree01.png" id="1_4ufqj"]
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_4el64"]
+resource_name = "tree"
+texture = ExtResource("1_4ufqj")
+texture_region_size = Vector2i(128, 128)
+0:0/size_in_atlas = Vector2i(4, 4)
+0:0/0 = 0
 
 [sub_resource type="CompressedTexture2D" id="CompressedTexture2D_4ufqj"]
 load_path = "res://.godot/imported/grass path tileset.png-99910cbc4ecafaef0a35b36702716e98.ctex"
@@ -10,28 +18,29 @@ resource_name = "grassy path"
 texture = SubResource("CompressedTexture2D_4ufqj")
 texture_region_size = Vector2i(128, 128)
 use_texture_padding = false
-1:0/size_in_atlas = Vector2i(2, 2)
-1:0/0 = 0
-1:2/size_in_atlas = Vector2i(2, 2)
-1:2/0 = 0
-1:4/size_in_atlas = Vector2i(2, 2)
-1:4/0 = 0
-3:4/size_in_atlas = Vector2i(2, 2)
-3:4/0 = 0
-3:2/size_in_atlas = Vector2i(2, 2)
-3:2/0 = 0
-3:0/size_in_atlas = Vector2i(2, 2)
-3:0/0 = 0
-5:0/size_in_atlas = Vector2i(2, 2)
-5:0/0 = 0
-5:2/size_in_atlas = Vector2i(2, 2)
-5:2/0 = 0
-5:4/size_in_atlas = Vector2i(2, 2)
-5:4/0 = 0
+2:2/size_in_atlas = Vector2i(2, 2)
+2:2/0 = 0
+4:2/size_in_atlas = Vector2i(2, 2)
+4:2/0 = 0
+6:2/size_in_atlas = Vector2i(2, 2)
+6:2/0 = 0
+2:4/size_in_atlas = Vector2i(2, 2)
+2:4/0 = 0
+4:4/size_in_atlas = Vector2i(2, 2)
+4:4/0 = 0
+6:4/size_in_atlas = Vector2i(2, 2)
+6:4/0 = 0
+2:6/size_in_atlas = Vector2i(2, 2)
+2:6/0 = 0
+4:6/size_in_atlas = Vector2i(2, 2)
+4:6/0 = 0
+6:6/size_in_atlas = Vector2i(2, 2)
+6:6/0 = 0
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_s2h20"]
 resource_name = "inverted grassy path"
 texture = ExtResource("1_4naga")
+separation = Vector2i(1, 0)
 texture_region_size = Vector2i(128, 128)
 use_texture_padding = false
 2:2/size_in_atlas = Vector2i(2, 2)
@@ -57,3 +66,4 @@ use_texture_padding = false
 tile_size = Vector2i(128, 128)
 sources/1 = SubResource("TileSetAtlasSource_jaw1t")
 sources/2 = SubResource("TileSetAtlasSource_s2h20")
+sources/0 = SubResource("TileSetAtlasSource_4el64")
