@@ -1,6 +1,6 @@
 [gd_scene format=4 uid="uid://bnlxh3e0rosbv"]
 
-[ext_resource type="TileSet" uid="uid://cftvibpfga5y4" path="res://Top-Down/Spritesheet/grassy dirt path tileset.tres" id="1_71spf"]
+[ext_resource type="TileSet" uid="uid://cftvibpfga5y4" path="res://Top-Down/Spritesheet/Tilesets/grassy dirt path tileset.tres" id="1_71spf"]
 
 [node name="Forest Map" type="Node2D" unique_id=862397189]
 
