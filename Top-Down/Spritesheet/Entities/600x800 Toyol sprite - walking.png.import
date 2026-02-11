@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://y4cibsrgupwm"
-path="res://.godot/imported/inverted grass path tileset.png-e94b455a21ccfb3e874e18d40d32dc6e.ctex"
+uid="uid://dwkjehllkq7hk"
+path="res://.godot/imported/600x800 Toyol sprite - walking.png-7b0e4b6d1bf169c7a7b7768d3a420762.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Top-Down/Spritesheet/inverted grass path tileset.png"
-dest_files=["res://.godot/imported/inverted grass path tileset.png-e94b455a21ccfb3e874e18d40d32dc6e.ctex"]
+source_file="res://Top-Down/Spritesheet/Entities/600x800 Toyol sprite - walking.png"
+dest_files=["res://.godot/imported/600x800 Toyol sprite - walking.png-7b0e4b6d1bf169c7a7b7768d3a420762.ctex"]
 
 [params]
 

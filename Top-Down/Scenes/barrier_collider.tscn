@@ -1,0 +1,3 @@
+[gd_scene format=3 uid="uid://cwy48kg004u8i"]
+
+[node name="BarrierCollider" type="Area2D" unique_id=1169149136]

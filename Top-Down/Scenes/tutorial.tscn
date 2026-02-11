@@ -1,0 +1,75 @@
+[gd_scene format=3 uid="uid://bdp37r5fbo174"]
+
+[ext_resource type="PackedScene" uid="uid://bnlxh3e0rosbv" path="res://Top-Down/Level Map/forest_map.tscn" id="1_4tqxq"]
+[ext_resource type="PackedScene" uid="uid://cwy48kg004u8i" path="res://Top-Down/Scenes/barrier_collider.tscn" id="2_d6kih"]
+[ext_resource type="PackedScene" uid="uid://0658mgo0q7ol" path="res://Top-Down/Scenes/player_top_down.tscn" id="3_cg06p"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_bdo3b"]
+size = Vector2(576, 479)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_d6puo"]
+size = Vector2(311.5677, 5344.3594)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_lgrae"]
+size = Vector2(4903, 181)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_5f7tt"]
+size = Vector2(5027, 141.5)
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_4tqxq"]
+radius = 296.99707
+height = 742.0355
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_d6kih"]
+radius = 38.0
+height = 844.0
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_4tqxq"]
+size = Vector2(2674, 145)
+
+[node name="Tutorial" type="Node2D" unique_id=1597673324]
+
+[node name="Forest Map" parent="." unique_id=862397189 instance=ExtResource("1_4tqxq")]
+
+[node name="BarrierCollider" parent="Forest Map" unique_id=1169149136 instance=ExtResource("2_d6kih")]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Forest Map/BarrierCollider" unique_id=1749871986]
+position = Vector2(-450, -82)
+shape = SubResource("RectangleShape2D_bdo3b")
+
+[node name="LeftTreeBorder" type="CollisionShape2D" parent="Forest Map/BarrierCollider" unique_id=1180373376]
+position = Vector2(-2496.41, -108.90655)
+rotation = 0.0065974602
+scale = Vector2(0.99999994, 0.99999994)
+shape = SubResource("RectangleShape2D_d6puo")
+
+[node name="RightTreeBorder" type="CollisionShape2D" parent="Forest Map/BarrierCollider" unique_id=210744406]
+position = Vector2(3463.0002, -180)
+rotation = 0.0065974602
+scale = Vector2(0.99999994, 0.99999994)
+shape = SubResource("RectangleShape2D_d6puo")
+
+[node name="UpperTreeBorder" type="CollisionShape2D" parent="Forest Map/BarrierCollider" unique_id=1221244466]
+position = Vector2(504.5, -2591)
+shape = SubResource("RectangleShape2D_lgrae")
+
+[node name="LowerTreeBorder" type="CollisionShape2D" parent="Forest Map/BarrierCollider" unique_id=1091364479]
+position = Vector2(440.5, 2470.75)
+shape = SubResource("RectangleShape2D_5f7tt")
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="Forest Map/BarrierCollider" unique_id=1328584937]
+position = Vector2(-585, -1647.9999)
+rotation = 1.572855
+shape = SubResource("CapsuleShape2D_4tqxq")
+
+[node name="CollisionShape2D3" type="CollisionShape2D" parent="Forest Map/BarrierCollider" unique_id=1396729267]
+position = Vector2(1470, -1448)
+shape = SubResource("CapsuleShape2D_d6kih")
+
+[node name="CollisionShape2D4" type="CollisionShape2D" parent="Forest Map/BarrierCollider" unique_id=392297755]
+position = Vector2(370.00003, 1294)
+rotation = -0.026623903
+shape = SubResource("RectangleShape2D_4tqxq")
+
+[node name="PlayerTopDown" parent="." unique_id=1673576978 instance=ExtResource("3_cg06p")]
+position = Vector2(159, -160)
