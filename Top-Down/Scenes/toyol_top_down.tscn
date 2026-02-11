@@ -1,10 +1,13 @@
 [gd_scene format=3 uid="uid://6lgp7blcr621"]
 
 [ext_resource type="Texture2D" uid="uid://dwkjehllkq7hk" path="res://Top-Down/Spritesheet/Entities/600x800 Toyol sprite - walking.png" id="1_5gqsy"]
+[ext_resource type="Script" uid="uid://dtt878nvymb2e" path="res://Top-Down/Scripts/toyol_top_down.gd" id="1_s5yfx"]
+[ext_resource type="Script" uid="uid://n3o1u8mpk0rw" path="res://Top-Down/Scripts/Finite State Machine/StateMachine.gd" id="2_q5nds"]
+[ext_resource type="Script" uid="uid://c8d3d4ch5p3co" path="res://Top-Down/Scripts/Finite State Machine/EnemyIdle.gd" id="3_s5yfx"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_bdc1k"]
-radius = 60.0
-height = 406.0
+radius = 18.0
+height = 102.0
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_2gjco"]
 atlas = ExtResource("1_5gqsy")
@@ -476,14 +479,24 @@ animations = [{
 "speed": 24.0
 }]
 
-[node name="toyol_top_down" type="CharacterBody2D" unique_id=1695571215]
+[node name="toyol_top_down" type="CharacterBody2D" unique_id=881276329 groups=["Enemy"]]
+collision_mask = 0
+script = ExtResource("1_s5yfx")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1904021874]
-position = Vector2(-17, -197)
+position = Vector2(11, 45)
 shape = SubResource("CapsuleShape2D_bdc1k")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=1563500234]
-position = Vector2(-56, -376)
+scale = Vector2(0.25, 0.25)
 sprite_frames = SubResource("SpriteFrames_ut4qj")
 animation = &"walking"
 metadata/_edit_lock_ = true
+
+[node name="StateMachine" type="Node" parent="." unique_id=1648095200 node_paths=PackedStringArray("initial_state")]
+script = ExtResource("2_q5nds")
+initial_state = NodePath("EnemyIdle")
+
+[node name="EnemyIdle" type="Node" parent="StateMachine" unique_id=1017196301 node_paths=PackedStringArray("enemy")]
+script = ExtResource("3_s5yfx")
+enemy = NodePath("../..")

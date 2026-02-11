@@ -24,7 +24,6 @@ config/icon="res://icon.svg"
 PromptList="*res://Legacy 2D/scripts/prompt_list.gd"
 GlobalSignals="*res://Legacy 2D/scripts/GlobalSignals.gd"
 DialogueManager="*res://addons/dialogue_manager/dialogue_manager.gd"
-AudioController="*res://Legacy 2D/resources/sfx/audio_controller.tscn"
 
 [display]
 
