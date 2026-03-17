@@ -7,7 +7,7 @@ func _physics_process(delta: float) -> void:
 	move_and_slide()
 	
 	if velocity.length() > 0:
-		animated_sprite_2d.play("walking")
+		animated_sprite_2d.play("idle")
 	
 	if velocity.x > 0:
 		animated_sprite_2d.flip_h = false

@@ -1,23 +1,26 @@
 [gd_scene format=3 uid="uid://0658mgo0q7ol"]
 
 [ext_resource type="Script" uid="uid://d4fd6lsrixklu" path="res://Top-Down/Scripts/player_top_down.gd" id="1_8gvs5"]
-[ext_resource type="SpriteFrames" uid="uid://chgke0af36nsa" path="res://Top-Down/Spritesheet/Animations/playerTopDown_sprite_frames.tres" id="2_8gvs5"]
+[ext_resource type="SpriteFrames" uid="uid://chgke0af36nsa" path="res://Top-Down/Spritesheet/Animations/playerTopDown_spriteframes.tres" id="2_8gvs5"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_8gvs5"]
-radius = 24.0
-height = 170.0
+radius = 32.0
+height = 214.0
 
-[node name="PlayerTopDown" type="CharacterBody2D" unique_id=1673576978]
+[node name="PlayerTopDown" type="CharacterBody2D" unique_id=1673576978 groups=["Player"]]
 script = ExtResource("1_8gvs5")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=126579627]
-position = Vector2(8, 7)
+position = Vector2(-1, 14)
 shape = SubResource("CapsuleShape2D_8gvs5")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=1754005790]
 scale = Vector2(0.25, 0.25)
 sprite_frames = ExtResource("2_8gvs5")
 animation = &"walking"
+frame = 19
+frame_progress = 1.0
+speed_scale = 1.5
 
 [node name="Camera2D" type="Camera2D" parent="." unique_id=2133761095]
 zoom = Vector2(1.25, 1.25)
