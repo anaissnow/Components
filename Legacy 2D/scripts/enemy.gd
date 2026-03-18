@@ -19,7 +19,7 @@ func _ready() -> void:
 func _physics_process(delta: float) -> void:
 	global_position.x -= speed
 	animated_sprite_2d.play("walk")
-	AudioController.play_movement()
+	#AudioController.play_movement()
 
 func is_dead():
 	animated_sprite_2d.play("death")

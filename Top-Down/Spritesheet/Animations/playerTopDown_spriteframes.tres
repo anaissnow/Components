@@ -1,4 +1,4 @@
-[gd_resource type="SpriteFrames" format=3 uid="uid://chgke0af36nsa"]
+[gd_resource type="SpriteFrames" load_steps=26 format=3 uid="uid://chgke0af36nsa"]
 
 [ext_resource type="Texture2D" uid="uid://p6fi2fj863w4" path="res://Top-Down/Spritesheet/Entities/Exorcist_idle_spritesheet.png" id="1_ljd1i"]
 [ext_resource type="Texture2D" uid="uid://dp4myj4614lwf" path="res://Top-Down/Spritesheet/Entities/Exorcist_spritesheet_walk_cycle_1024x1024.png" id="2_50dij"]

@@ -86,7 +86,7 @@ func _on_lose_area_body_entered(_body: Node2D) -> void:
 	game_over()
 
 func game_over():
-	AudioController.play_end_level()
+	#AudioController.play_end_level()
 	await get_tree().create_timer(1).timeout
 	game_over_screen.show()
 	spawn_timer.stop()
@@ -108,18 +108,18 @@ func start_game():
 	spawn_enemy()
 
 func _on_restart_button_pressed() -> void:
-	AudioController.play_button_sfx()
-	await AudioController.finished
+	#AudioController.play_button_sfx()
+	#await AudioController.finished
 	# clear out any existing enemies, reset connection, etc.
 	start_game()
 
 
 func _on_quit_button_pressed() -> void:
-	AudioController.play_button_sfx()
+	#AudioController.play_button_sfx()
 	get_tree().change_scene_to_file("res://scenes/option menu/scenes/end_credits/end_credits.tscn")
 
 
 func _on_pause_button_pressed() -> void:
-	AudioController.play_button_sfx()
+	#AudioController.play_button_sfx()
 	$CanvasLayer/PauseMenu.show()
 	get_tree().paused = true

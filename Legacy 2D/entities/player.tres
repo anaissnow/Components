@@ -1,4 +1,4 @@
-[gd_resource type="SpriteFrames" format=3 uid="uid://cvvrs6n3weob0"]
+[gd_resource type="SpriteFrames" load_steps=21 format=3 uid="uid://cvvrs6n3weob0"]
 
 [ext_resource type="Texture2D" uid="uid://cjcsmg01e6wik" path="res://Legacy 2D/resources/spritesheets/ShiQi_spritesheet.png" id="1_iviwr"]
 

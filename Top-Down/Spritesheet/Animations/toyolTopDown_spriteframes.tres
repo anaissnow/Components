@@ -1,4 +1,4 @@
-[gd_resource type="SpriteFrames" format=3 uid="uid://civyc2r6mvn3k"]
+[gd_resource type="SpriteFrames" load_steps=15 format=3 uid="uid://civyc2r6mvn3k"]
 
 [ext_resource type="Texture2D" uid="uid://d0q5aoargvq3t" path="res://Top-Down/Spritesheet/Entities/Toyol_idle_spritesheet.png" id="1_ooqqm"]
 [ext_resource type="Texture2D" uid="uid://gv1bi2wr0qcg" path="res://Top-Down/Spritesheet/Entities/Toyol_spritesheet_walk_cycle_1024x1024.png" id="2_rrhs7"]
@@ -53,6 +53,11 @@ region = Rect2(1024, 2048, 1024, 1024)
 
 [resource]
 animations = [{
+"frames": [],
+"loop": true,
+"name": &"attack",
+"speed": 5.0
+}, {
 "frames": [{
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_bpu0v")

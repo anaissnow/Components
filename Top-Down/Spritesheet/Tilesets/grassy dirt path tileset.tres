@@ -1,4 +1,4 @@
-[gd_resource type="TileSet" format=3 uid="uid://cftvibpfga5y4"]
+[gd_resource type="TileSet" load_steps=7 format=3 uid="uid://cftvibpfga5y4"]
 
 [ext_resource type="Texture2D" uid="uid://y4cibsrgupwm" path="res://Top-Down/Spritesheet/Tilesets/inverted grass path tileset.png" id="1_4naga"]
 [ext_resource type="Texture2D" uid="uid://dgq3a3fuvbk7e" path="res://Top-Down/Spritesheet/tree01.png" id="1_4ufqj"]

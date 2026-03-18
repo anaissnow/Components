@@ -56347,13 +56347,6 @@ pork
 porker
 porkers
 porlock
-porn
-porno
-pornographer
-pornographers
-pornographic
-pornographically
-pornography
 porosity
 porous
 porphyries
@@ -66611,7 +66604,6 @@ sewers
 sewing
 sewn
 sews
-sex
 sexagenarian
 sexagenarians
 sexed
@@ -66626,7 +66618,6 @@ sexists
 sexless
 sexologist
 sexology
-sexploitation
 sextant
 sextants
 sextet
@@ -66641,17 +66632,7 @@ sextuples
 sextuplet
 sextuplets
 sextupling
-sexual
-sexualise
-sexualised
-sexualises
-sexualising
 sexuality
-sexualize
-sexualized
-sexualizes
-sexualizing
-sexually
 sexy
 seychelles
 seymour

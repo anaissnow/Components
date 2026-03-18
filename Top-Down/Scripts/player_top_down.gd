@@ -7,6 +7,7 @@ var dir
 var main_sm: LimboHSM
 
 func _ready() -> void:
+	GlobalSignals.playerBody = self
 	initiate_state_machine()
 
 func get_input():
@@ -60,7 +61,10 @@ func walk_update(delta: float):
 		main_sm.dispatch(&"state_ended")
 
 func attack_start():
+	#animated_sprite_2d.play("attack")
 	pass
 
 func attack_update(delta: float):
+	#if animated_sprite_2d.animation != "attack":
+		#main_sm.dispatch(&"state_ended")
 	pass

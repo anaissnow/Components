@@ -1,4 +1,4 @@
-[gd_scene format=3 uid="uid://0658mgo0q7ol"]
+[gd_scene load_steps=4 format=3 uid="uid://0658mgo0q7ol"]
 
 [ext_resource type="Script" uid="uid://d4fd6lsrixklu" path="res://Top-Down/Scripts/player_top_down.gd" id="1_8gvs5"]
 [ext_resource type="SpriteFrames" uid="uid://chgke0af36nsa" path="res://Top-Down/Spritesheet/Animations/playerTopDown_spriteframes.tres" id="2_8gvs5"]
@@ -7,14 +7,16 @@
 radius = 32.0
 height = 214.0
 
-[node name="PlayerTopDown" type="CharacterBody2D" unique_id=1673576978 groups=["Player"]]
+[node name="PlayerTopDown" type="CharacterBody2D" groups=["Player"]]
+collision_layer = 2
+collision_mask = 2
 script = ExtResource("1_8gvs5")
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=126579627]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2(-1, 14)
 shape = SubResource("CapsuleShape2D_8gvs5")
 
-[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=1754005790]
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 scale = Vector2(0.25, 0.25)
 sprite_frames = ExtResource("2_8gvs5")
 animation = &"walking"
@@ -22,12 +24,11 @@ frame = 19
 frame_progress = 1.0
 speed_scale = 1.5
 
-[node name="Camera2D" type="Camera2D" parent="." unique_id=2133761095]
-zoom = Vector2(1.25, 1.25)
-limit_left = -2000
-limit_top = -2000
-limit_right = 2000
-limit_bottom = 2000
+[node name="Camera2D" type="Camera2D" parent="."]
+limit_left = -2500
+limit_top = -2500
+limit_right = 3500
+limit_bottom = 2500
 position_smoothing_enabled = true
 drag_horizontal_enabled = true
 drag_vertical_enabled = true

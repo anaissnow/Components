@@ -1,4 +1,4 @@
-[gd_resource type="SpriteFrames" format=3 uid="uid://escm5ud12lf4"]
+[gd_resource type="SpriteFrames" load_steps=36 format=3 uid="uid://escm5ud12lf4"]
 
 [ext_resource type="Texture2D" uid="uid://d3jffef6gcvhi" path="res://Legacy 2D/resources/spritesheets/toyol_spritesheet.png" id="1_tupiq"]
 

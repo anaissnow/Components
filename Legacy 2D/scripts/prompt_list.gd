@@ -4,6 +4,7 @@ var word_list : Array[String] = []
 var path = "res://Legacy 2D/resources/eng_words.txt"
 var file = FileAccess.open(path, FileAccess.READ)
 var content = file.get_as_text()
+var toyol = preload("uid://6lgp7blcr621")
 
 func _ready() -> void:
 	if file == null:

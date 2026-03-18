@@ -1,30 +1,40 @@
-[gd_scene format=3 uid="uid://6lgp7blcr621"]
+[gd_scene load_steps=4 format=3 uid="uid://6lgp7blcr621"]
 
 [ext_resource type="Script" uid="uid://dtt878nvymb2e" path="res://Top-Down/Scripts/toyol_top_down.gd" id="1_s5yfx"]
 [ext_resource type="SpriteFrames" uid="uid://civyc2r6mvn3k" path="res://Top-Down/Spritesheet/Animations/toyolTopDown_spriteframes.tres" id="2_oa5i2"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_bdc1k"]
-radius = 18.0
+radius = 31.0
 height = 130.0
 
-[node name="toyol_top_down" type="CharacterBody2D" unique_id=881276329 groups=["Enemy"]]
-collision_mask = 0
+[node name="toyol_top_down" type="CharacterBody2D" groups=["Enemy"]]
+collision_layer = 2
+collision_mask = 2
 script = ExtResource("1_s5yfx")
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1904021874]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2(0, 11)
 shape = SubResource("CapsuleShape2D_bdc1k")
 
-[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=1563500234]
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 scale = Vector2(0.15, 0.15)
 sprite_frames = ExtResource("2_oa5i2")
-animation = &"idle"
-frame_progress = 0.55393326
+animation = &"attack"
 speed_scale = 1.5
 metadata/_edit_lock_ = true
 
-[node name="StateMachine" type="Node" parent="." unique_id=1648095200]
+[node name="RichTextLabel" type="RichTextLabel" parent="."]
+offset_left = -89.0
+offset_top = -94.0
+offset_right = 90.0
+offset_bottom = -58.0
+bbcode_enabled = true
+fit_content = true
+scroll_active = false
+horizontal_alignment = 1
+vertical_alignment = 1
 
-[node name="Idle" type="Node" parent="StateMachine" unique_id=1017196301]
+[node name="Timer" type="Timer" parent="."]
+autostart = true
 
-[node name="Follow" type="Node" parent="StateMachine" unique_id=1139051953]
+[connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]
